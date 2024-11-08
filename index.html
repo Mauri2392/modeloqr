@@ -16,52 +16,74 @@
     />
 </head>
 <body> 
+    <!--
+    <section class="portada"> 
+    </section> 
+    -->
 
-    
-    <section class="portada">
-        
+    <section class="header-section">
+        <img src="./img/papas fritas.jpeg" alt="Imagen encabezado" class="header-img">
+        <div class="logo-container">
+            <img src="./img/Logo Sencillo Neón para Bar.png" alt="Logo" class="logo">
+        </div>
+        <div class="inform">
+            <h1>Bienvenido a Nuestro Restaurante</h1>
+            <p>Descubre nuestros deliciosos platos y disfruta de una experiencia única.</p>
+        </div>
     </section> 
 
 
-    <section class="principal">
+    <div class="button-container">
+        <a href="#pizza" class="nav-link">Pizzas</a>
+        <a href="#hamburguesas" class="nav-link">Hamburguesas</a>
+        <a href="#bebidas" class="nav-link">Bebidas</a> 
+        <a href="#postres" class="nav-link">Postres</a>
+        <a href="#pescados" class="nav-link">Pescados</a>
+        <a href="#tacos" class="nav-link">Tacos</a>
+    </div>
+
+
+    <section id="pizza">
         <div class="contenedor">
             <h3>Pizzas</h3>
+
             <div class="cajas"> 
                 <div class="imagen">
-                    <img src="./img/pizza.jpeg" alt=""> 
+                    <img src="./img/pizza.jpeg" alt="" onclick="openModal(this)"> 
                 </div>
-
                 <div class="info">
-                    <p>Comun</p>
+                    <p><span>Comun</span></p>
                     <p>La combinacion ideal del sabor italiano en una pizza de jamon y queso. 
                         La combinacion ideal del sabor italiano en una pizza de jamon y queso. 
                     </p>
                     <p>5 euros</p>
                 </div>
             </div> 
-            
+
             <div class="cajas"> 
                 <div class="imagen">
-                    <img src="./img/pizza.jpeg" alt=""> 
+                    <img src="./img/pizza.jpeg" alt=""  onclick="openModal(this)"> 
                 </div>
-
+    
                 <div class="info">
-                    <p>Comun </p>
+                    <p><span>Comun</span></p>
                     <p>La combinacion ideal del sabor italiano en una pizza de jamon y queso.</p>  
                     <p>5 euros</p>
                 </div>
             </div> 
         </div> 
+    </section>
 
+    <section id="hamburguesas">
         <div class="contenedor">
             <h3>Hamburguesas</h3>
+            <p>Todas Vienen con papas y Bebida a eleccion</p>
             <div class="cajas"> 
                 <div class="imagen">
-                    <img src="./img/hamburguesa.jpeg" alt=""> 
+                    <img src="./img/hamburguesa.jpeg" alt=""  onclick="openModal(this)"> 
                 </div>
-
                 <div class="info">
-                    <p>Comun</p>
+                    <p><span>Comun</span></p>
                     <p>La combinacion ideal del sabor en una hamburguesa de jamon y queso.</p>
                     <p>5 euros</p>
                 </div>
@@ -69,53 +91,27 @@
             
             <div class="cajas"> 
                 <div class="imagen">
-                    <img src="./img/hamburguesa.jpeg" alt=""> 
+                    <img src="./img/hamburguesa.jpeg" alt=""  onclick="openModal(this)"> 
                 </div>
-
                 <div class="info">
-                    <p>Comun</p>
+                    <p><span>Comun</span></p>
                     <p>La combinacion ideal del sabor en una hamburguesa de jamon y queso.</p>
                     <p>5 euros</p>
                 </div>
             </div> 
         </div> 
+    </section>
 
-        <div class="contenedor">
-            <h3>Postres</h3>
-            <div class="cajas"> 
-                <div class="imagen">
-                    <img src="./img/brownie.jpeg" alt=""> 
-                </div>
-
-                <div class="info">
-                    <p>Brownie</p>
-                    <p>La combinacion ideal del sabor en una hamburguesa de jamon y queso.</p>
-                    <p>5 euros</p>
-                </div>
-            </div> 
-            
-            <div class="cajas"> 
-                <div class="imagen">
-                    <img src="./img/cupcke chocolte.jpeg" alt=""> 
-                </div>
-
-                <div class="info">
-                    <p>Cupcake</p>
-                    <p>La combinacion ideal del sabor en una hamburguesa de jamon y queso.</p>
-                    <p>5 euros</p>
-                </div>
-            </div> 
-        </div> 
-
+    <section id="bebidas">
         <div class="contenedor">
             <h3>Bebidas</h3>
             <div class="cajas"> 
                 <div class="imagen">
-                    <img src="./img/cccl.jpeg" alt=""> 
+                    <img src="./img/cccl.jpeg" alt=""  onclick="openModal(this)"> 
                 </div>
 
                 <div class="info">
-                    <p>Coca</p>
+                    <p><span>Coca</span></p>
                     <p>300ml</p>
                     <p>5 euros</p>
                 </div>
@@ -123,11 +119,11 @@
             
             <div class="cajas"> 
                 <div class="imagen">
-                    <img src="./img/cerve.jpeg" alt=""> 
+                    <img src="./img/cerve.jpeg" alt=""  onclick="openModal(this)"> 
                 </div>
 
                 <div class="info">
-                    <p>Cerveza</p>
+                    <p><span>Cerveza</span></p>
                     <p>300ml</p>
                     <p>5 euros</p>
                 </div>
@@ -135,16 +131,118 @@
         </div> 
     </section> 
 
+    <section id="postres"> 
+        <div class="contenedor">
+            <h3>Postres</h3>
+            <div class="cajas"> 
+                <div class="imagen">
+                    <img src="./img/brownie.jpeg" alt=""  onclick="openModal(this)"> 
+                </div>
+
+                <div class="info">
+                    <p><span>Brownie</span></p>
+                    <p>La combinacion ideal del sabor en una hamburguesa de jamon y queso.</p>
+                    <p>5 euros</p>
+                </div>
+            </div> 
+            
+            <div class="cajas"> 
+                <div class="imagen">
+                    <img src="./img/cupcke chocolte.jpeg" alt=""  onclick="openModal(this)"> 
+                </div>
+
+                <div class="info">
+                    <p><span>Cupcake</span></p>
+                    <p>La combinacion ideal del sabor en una hamburguesa de jamon y queso.</p>
+                    <p>5 euros</p>
+                </div>
+            </div> 
+        </div> 
+    </section> 
+    
+    <section id="pescados"> 
+        <div class="contenedor">
+            <h3>Pescados</h3>
+            <div class="cajas"> 
+                <div class="imagen">
+                    <img src="./img/calamares.jpeg" alt=""  onclick="openModal(this)"> 
+                </div>
+
+                <div class="info">
+                    <p><span>Calamares</span></p>
+                    <p>La combinacion ideal del sabor en una hamburguesa de jamon y queso.</p>
+                    <p>5 euros</p>
+                </div>
+            </div> 
+            
+            <div class="cajas"> 
+                <div class="imagen">
+                    <img src="./img/calamares.jpeg" alt=""  onclick="openModal(this)"> 
+                </div>
+
+                <div class="info">
+                    <p><span>Calamares</span></p>
+                    <p>La combinacion ideal del sabor en una hamburguesa de jamon y queso.</p>
+                    <p>5 euros</p>
+                </div>
+            </div> 
+        </div> 
+    </section> 
+
+    <section id="tacos"> 
+        <div class="contenedor">
+            <h3>Tacos</h3>
+            <div class="cajas"> 
+                <div class="imagen">
+                    <img src="./img/tacos.jpeg" alt=""  onclick="openModal(this)"> 
+                </div>
+
+                <div class="info">
+                    <p><span>Tacos</span></p>
+                    <p>La combinacion ideal del sabor en una hamburguesa de jamon y queso.</p>
+                    <p>5 euros</p>
+                </div>
+            </div> 
+            
+            <div class="cajas"> 
+                <div class="imagen">
+                    <img src="./img/tacos.jpeg" alt=""  onclick="openModal(this)"> 
+                </div>
+
+                <div class="info">
+                    <p><span>Tacos</span></p>
+                    <p>La combinacion ideal del sabor en una hamburguesa de jamon y queso.</p>
+                    <p>5 euros</p>
+                </div>
+            </div> 
+        </div> 
+    </section> 
+
+    <!-- Modal para la imagen -->
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <p id="modal-title" class="modal-title"></p>
+            <img id="modal-img">
+            <p id="modal-desc" class="modal-desc"></p>
+            <p id="modal-price" class="modal-price"></p>
+        </div>
+    </div>
+
     <footer id="footer">
         <div class="container">
+            <div>
+                <img src="./img/Logo Sencillo Neón para Bar.png" alt="logo">
+            </div>
+
             <div class="ubicacion">
-                <i class="fa-solid fa-location-dot"></i>
+                <i class="fa-solid fa-location-dot"></i> 
                 <p>Direccion:</p>
                 <p>Eduardo Torroja 6, Comunidad Valenciana</p>
             </div> 
 
             <div class="contacto">
-                <i class="bi bi-telephone"></i>
+                <i class="bi bi-telephone"></i> 
                 <p>Contacto</p>
                 <p>+347777777</p>
                 <p>mmmmmeeeee@gmail.com</p>
@@ -152,5 +250,6 @@
         </div>
     </footer> 
 
+    <script src="script.js"></script>
 </body>
 </html>

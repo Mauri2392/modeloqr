@@ -13,8 +13,8 @@ body {
 } 
 
 
-.portada {
-
+/* 
+.portada { 
     height: 30vh;
     background-color: pink;
     background-image: url(./img/papas\ fritas.jpeg);
@@ -27,7 +27,8 @@ body {
     position: relative; 
     max-width: 700px;
     margin: 0 auto;  
-} 
+} */ 
+
 /* 
 .portada img {
     width: 700px;
@@ -38,16 +39,110 @@ body {
     justify-content: center; 
 } */ 
 
+
+.header-section {
+    text-align: center;
+   /* padding: 20px; */
+    background-color: #f8f9fa;
+    max-width: 700px;
+    margin: 0 auto; /* Centrar la sección */
+}
+
+.header-img {
+    width: 100%;
+    height: 30vh; /* Altura de la imagen */
+    object-fit: cover; /* Para asegurar que la imagen cubra el espacio disponible */
+    max-width: 700px; /* Ancho máximo de la imagen */
+} 
+
+.logo-container img {
+    width: 150px;
+    height: 150px;
+    margin-top: -75px; 
+    border-radius: 20%;
+} 
+
+.inform {
+  /*  padding: 20px 0; */
+    margin-top: 20px;
+} 
+
+.inform h1 {
+    padding-bottom: 20px;
+} 
+
+.inform p {
+    padding-bottom: 20px;
+} 
+
+.button-container {
+    display: flex;
+ /* overflow-x: auto; */ /* Habilitar scroll horizontal */
+    overflow-x: hidden; /* Esconde scroll horizontal */
+    white-space: nowrap; /* Evitar que los botones se envuelvan en líneas */
+    max-width: 700px;
+    margin: 0px auto; /* Centrar el contenedor de botones */
+    background-color: #f8f9fa;
+    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+    padding: 10px 0;
+    position: -webkit-sticky; /* Compatibilidad con navegadores Webkit */
+    position: sticky;
+    top: 0; /* Para mantenerlo fijo en la parte superior de la ventana al hacer scroll */
+}
+
+/* Estilos para la barra de desplazamiento horizontal */
+.button-container::-webkit-scrollbar {
+    height: 6px; /* Altura de la barra de desplazamiento */
+}
+
+.button-container::-webkit-scrollbar-thumb {
+    background-color: #007bff; /* Color azul para la barra de desplazamiento */
+    border-radius: 10px; /* Bordes redondeados para la barra de desplazamiento */
+}
+
+.button-container::-webkit-scrollbar-track {
+    background: transparent; /* Fondo transparente para la pista de desplazamiento */
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    background-color: #007bff; /* Color azul */
+    border: none;
+    border-radius: 4px;
+    margin: 5px;  /* Para agregar espacio entre los botones */
+}
+
+.nav-link.active {
+    background-color: #0056b3;  /* Azul más oscuro para el estado activo */
+}
+
+.nav-link:hover {
+    background-color: #0056b3;  /* Azul más oscuro en hover */
+} 
+
+/*
 .principal {
     max-width: 800px; 
     margin: 0 auto;
     text-align: center;
     background-color: blueviolet; 
-    /*display: flex;
+    display: flex;
     flex-direction: column; 
     justify-content: center;
-    padding: 50px; */
-} 
+    padding: 50px;  
+} */
+
+#pizza {
+    max-width: 700px; 
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(229, 233, 236);
+}
 
 .contenedor {
     max-width: 700px;
@@ -61,9 +156,17 @@ body {
     display: flex;
     justify-content: flex-start;
     margin-left: 50px;
-    margin-top: 15px;
-    margin-bottom: 15px; 
+    margin-top: 20px;
+    margin-bottom: 10px; 
 } 
+
+.contenedor p {
+    display: flex;
+    justify-content: flex-start; 
+    margin-left: 50px; 
+    font-size: 14px;
+    margin-bottom: 10px;
+}
 
 .cajas {
     width: 98%; 
@@ -79,8 +182,8 @@ body {
 
 .cajas img {
   /*  margin-top: 10px; */
-    width: 80px;
-    height: 80px; 
+    width: 120px;
+    height: 120px; 
     border-radius: 15px;
     padding: 10px;
 }
@@ -95,8 +198,14 @@ body {
 } 
 
 .info p {
-    font-size: 10px;
+    font-size: 14px;
+    margin-left: 0px;
 }
+
+.info p span {
+    font-size: 14px;
+    font-weight: 600;
+} 
 
 hr {
     border: solid .5px rgb(216, 202, 202);
@@ -116,9 +225,75 @@ footer {
 
 footer p {
     font-size: 16px;
+    padding: 5px;
 } 
 
-.ubicacion {
-    margin: 30px; 
+footer img {
+    width: 150px;
+    height: 150px; 
+    border-radius: 20%;
 }
 
+.ubicacion, 
+.contacto { 
+    color:blueviolet;
+    font-weight: 600; 
+    margin: 30px; 
+} 
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+   /* height: 350px;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modal-title,
+.modal-desc,
+.modal-price {
+    color: #000;
+    margin: 5px 0;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.modal-content img {
+    width: 90%; 
+    height: 200px;
+    margin: 0 auto;
+    /* height: 80%;*/
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
