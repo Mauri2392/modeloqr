@@ -11,12 +11,13 @@ navLinks.forEach(link => {
 // Actualizar la clase 'active' en función del scroll
 document.addEventListener('scroll', function() {
     const sections = document.querySelectorAll('section');
+    const navbarHeight = 60; // Altura del navbar en píxeles
     let currentSection = '';
 
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (scrollY >= sectionTop - sectionHeight / 3) {
+        if (scrollY >= sectionTop - navbarHeight - sectionHeight / 3) {
             currentSection = section.getAttribute('id');
         }
     });
@@ -33,48 +34,37 @@ document.addEventListener('scroll', function() {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-
-        const navbarHeight = 60; // Altura del navbar en píxeles 
-        const targetId = this.getAttribute('href'); 
-        const targetElement = document.querySelector(targetId); 
-        const targetPosition = targetElement.offsetTop - navbarHeight; 
-        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-
-       /* document.querySelector(this.getAttribute('href')).scrollIntoView({
+        const navbarHeight = 60; // Altura del navbar en píxeles
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        const targetPosition = targetElement.offsetTop - navbarHeight;
+        window.scrollTo({
+            top: targetPosition,
             behavior: 'smooth'
-        });*/
+        });
     });
 });
 
-
-// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-//     anchor.addEventListener('click', function (e) {
-//         e.preventDefault(); 
-//         const navbarHeight = 60; // Altura del navbar en píxeles 
-//         const targetId = this.getAttribute('href'); 
-//         const targetElement = document.querySelector(targetId); 
-//         const targetPosition = targetElement.offsetTop - navbarHeight; 
-//         window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-//     });
-// });
-
-
 // Funciones para el modal
-function openModal(imgElement) {
-    var modal = document.getElementById("modal");
-    var modalImg = document.getElementById("modal-img");
-    var modalTitle = document.getElementById("modal-title");
-    var modalDesc = document.getElementById("modal-desc");
-    var modalPrice = document.getElementById("modal-price");
+function openModal(divElement) {
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDesc = document.getElementById("modal-desc");
+    const modalPrice = document.getElementById("modal-price");
+
+    const imgElement = divElement.querySelector('img');
+    const spanElement = divElement.querySelector('span');
+    const pElements = divElement.querySelectorAll('p');
 
     modal.style.display = "flex";
     modalImg.src = imgElement.src;
-    modalTitle.textContent = imgElement.closest('.cajas').querySelector('span').textContent; // Asigna el título
-    modalDesc.textContent = imgElement.closest('.cajas').querySelectorAll('p')[1].textContent; // Asigna la descripción
-    modalPrice.textContent = imgElement.closest('.cajas').querySelectorAll('p')[2].textContent; // Asigna el precio
+    modalTitle.textContent = spanElement.textContent; // Asigna el título
+    modalDesc.textContent = pElements[1].textContent; // Asigna la descripción
+    modalPrice.textContent = pElements[2].textContent; // Asigna el precio
 }
 
 function closeModal() {
-    var modal = document.getElementById("modal");
+    const modal = document.getElementById("modal");
     modal.style.display = "none";
 }

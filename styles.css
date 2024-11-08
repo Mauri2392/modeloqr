@@ -9,7 +9,7 @@
 } 
 
 body {
-    background-color: brown;
+    background-color:  rgb(229, 233, 236);
 } 
 
 
@@ -261,7 +261,7 @@ footer img {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    width: 300px;
+    width: 250px;
    /* height: 350px;*/
     display: flex;
     flex-direction: column;
@@ -281,7 +281,7 @@ footer img {
 
 .modal-content img {
     width: 90%; 
-    height: 200px;
+    height: 150px;
     margin: 0 auto;
     /* height: 80%;*/
     object-fit: cover;
@@ -290,10 +290,10 @@ footer img {
 
 .close {
     position: absolute;
-    top: 10px;
+    top: 5px;
     right: 30px;
     color: #fff;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     cursor: pointer;
 }
