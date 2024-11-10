@@ -207,6 +207,15 @@ body {
     font-weight: 600;
 } 
 
+/*
+.info p:nth-child(2) { 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    max-width: 700px;
+    display: inline-block; 
+} */
+
 hr {
     border: solid .5px rgb(216, 202, 202);
     width: 100%;

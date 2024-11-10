@@ -45,7 +45,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Funciones para el modal
+// Función para abrir el modal con el contenido completo
 function openModal(divElement) {
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modal-img");
@@ -57,14 +57,30 @@ function openModal(divElement) {
     const spanElement = divElement.querySelector('span');
     const pElements = divElement.querySelectorAll('p');
 
+    // Mostrar el modal y cargar la información completa
     modal.style.display = "flex";
     modalImg.src = imgElement.src;
-    modalTitle.textContent = spanElement.textContent; // Asigna el título
-    modalDesc.textContent = pElements[1].textContent; // Asigna la descripción
-    modalPrice.textContent = pElements[2].textContent; // Asigna el precio
+    modalTitle.textContent = spanElement.textContent;
+    modalDesc.textContent = pElements[1].dataset.fullText; // Usa el texto completo almacenado
+    modalPrice.textContent = pElements[2].textContent;
 }
 
+// Función para cerrar el modal
 function closeModal() {
     const modal = document.getElementById("modal");
     modal.style.display = "none";
+}
+
+// Truncar texto en el div principal
+const descriptionElement = document.querySelector('.description');
+const charLimit = 100;
+const originalText = descriptionElement.textContent;
+
+// Guarda el texto completo en un atributo `data` para usarlo en el modal
+descriptionElement.dataset.fullText = originalText;
+
+// Trunca el texto en el elemento principal si supera el límite de caracteres
+if (originalText.length > charLimit) {
+    const truncatedText = originalText.substring(0, charLimit) + '...';
+    descriptionElement.textContent = truncatedText;
 }
