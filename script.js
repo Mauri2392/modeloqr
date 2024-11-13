@@ -30,6 +30,9 @@ document.addEventListener('scroll', function() {
     });
 });
 
+
+
+
 // Desplazamiento suave al hacer click
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -45,7 +48,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Función para abrir el modal con el contenido completo
+
+
+
+
+
+
+// Función para abrir el modal y mostrar el contenido completo
 function openModal(divElement) {
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modal-img");
@@ -53,17 +62,22 @@ function openModal(divElement) {
     const modalDesc = document.getElementById("modal-desc");
     const modalPrice = document.getElementById("modal-price");
 
+    // Elementos del div principal
     const imgElement = divElement.querySelector('img');
     const spanElement = divElement.querySelector('span');
     const pElements = divElement.querySelectorAll('p');
 
-    // Mostrar el modal y cargar la información completa
+    // Mostrar el modal y asignar el contenido
     modal.style.display = "flex";
     modalImg.src = imgElement.src;
     modalTitle.textContent = spanElement.textContent;
-    modalDesc.textContent = pElements[1].dataset.fullText; // Usa el texto completo almacenado
+    
+    // Usa el contenido completo para el modal
+    modalDesc.textContent = pElements[1].dataset.fullText;
     modalPrice.textContent = pElements[2].textContent;
 }
+
+
 
 // Función para cerrar el modal
 function closeModal() {
@@ -71,16 +85,17 @@ function closeModal() {
     modal.style.display = "none";
 }
 
-// Truncar texto en el div principal
-const descriptionElement = document.querySelector('.description');
-const charLimit = 100;
-const originalText = descriptionElement.textContent;
+// Truncado de texto en el div principal
+document.querySelectorAll('.info p:nth-child(2)').forEach(descriptionElement => {
+    const charLimit = 100;
+    const originalText = descriptionElement.textContent;
 
-// Guarda el texto completo en un atributo `data` para usarlo en el modal
-descriptionElement.dataset.fullText = originalText;
+    // Guarda el texto completo en un atributo data-full-text para el modal
+    descriptionElement.dataset.fullText = originalText;
 
-// Trunca el texto en el elemento principal si supera el límite de caracteres
-if (originalText.length > charLimit) {
-    const truncatedText = originalText.substring(0, charLimit) + '...';
-    descriptionElement.textContent = truncatedText;
-}
+    // Trunca el texto en el div principal si supera el límite de caracteres
+    if (originalText.length > charLimit) {
+        const truncatedText = originalText.substring(0, charLimit) + '...';
+        descriptionElement.textContent = truncatedText;
+    }
+});
